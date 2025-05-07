@@ -109,7 +109,7 @@ int             fork(void);
 int             growproc(int);
 int             kill(int);
 struct cpu*     mycpu(void);
-struct proc*    myproc();
+struct proc*    myproc(void);
 void            pinit(void);
 void            procdump(void);
 void            scheduler(void) __attribute__((noreturn));
@@ -120,6 +120,8 @@ void            userinit(void);
 int             wait(void);
 void            wakeup(void*);
 void            yield(void);
+int             clone(void(*)(void*, void*), void*, void*, void*);
+int             join(void**);
 
 // swtch.S
 void            swtch(struct context**, struct context*);

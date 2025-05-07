@@ -56,3 +56,7 @@ struct proc {
 //   original data and bss
 //   fixed-size stack
 //   expandable heap
+
+// Add these function declarations
+int clone(void(*fcn)(void *, void *), void *arg1, void *arg2, void *stack);
+int join(void **stack);
